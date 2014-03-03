@@ -15,8 +15,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'Classes/**/*.{h,m}'
-  s.exclude_files = "Classes/**/Model/**"
+  s.ios.source_files = 'Classes/ios/BibleTriviaApiSDK/*.{h,m}'
   s.exclude_files = "Classes/**/KeychainItemWrapper.{h,m}"
   s.resources = 'Assets'
 
@@ -31,7 +30,7 @@ Pod::Spec.new do |s|
   s.subspec "Model" do |mdl|
     mdl.platform     = :ios, '7.0'
     mdl.requires_arc = true
-    mdl.source_files = "Classes/**/Model/**/*.{h,m}"
+    mdl.ios.source_files = "Classes/ios/BibleTriviaApiSDK/Model/**/*.{h,m}"
   end
 
   s.subspec "KeychainAccess" do |ka|
