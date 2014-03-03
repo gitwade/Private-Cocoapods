@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Classes/**/*.{h,m}'
+  s.exclude_files = "Classes/**/Model/**"
   s.exclude_files = "Classes/**/KeychainItemWrapper.{h,m}"
   s.resources = 'Assets'
 
@@ -27,10 +28,16 @@ Pod::Spec.new do |s|
   s.dependency 'FMDB', '~> 2.0'
   s.dependency 'Facebook-iOS-SDK', '~> 3.0'
 
-  s.subspec "KeychainAccess" do |sp|
-    sp.platform     = :ios, '7.0'
-    sp.frameworks = 'Security'
-    sp.requires_arc = false
-    sp.source_files = "Classes/**/KeychainItemWrapper.{h,m}"
+  s.subspec "Model" do |mdl|
+    mdl.platform     = :ios, '7.0'
+    mdl.requires_arc = true
+    mdl.source_files = "Classes/**/Model/**/*.{h,m}"
+  end
+
+  s.subspec "KeychainAccess" do |ka|
+    ka.platform     = :ios, '7.0'
+    ka.frameworks = 'Security'
+    ka.requires_arc = false
+    ka.source_files = "Classes/**/KeychainItemWrapper.{h,m}"
   end
 end
