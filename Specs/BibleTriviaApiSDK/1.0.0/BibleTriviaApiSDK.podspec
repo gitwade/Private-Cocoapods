@@ -30,7 +30,22 @@ Pod::Spec.new do |s|
   s.subspec "Model" do |mdl|
     mdl.platform     = :ios, '7.0'
     mdl.requires_arc = true
-    mdl.ios.source_files = "Classes/ios/BibleTriviaApiSDK/Model/**/*.{h,m}"
+    mdl.ios.source_files = "Classes/ios/BibleTriviaApiSDK/Model/*.{h,m}"
+    mdl.public_header_files = 'Classes/**/*.h'
+
+    mdl.subspec "Resource" do |rsrc|
+      rsrc.platform     = :ios, '7.0'
+      rsrc.requires_arc = true
+      rsrc.ios.source_files = "Classes/ios/BibleTriviaApiSDK/Model/Resource/*.{h,m}"
+      rsrc.public_header_files = 'Classes/**/*.h'
+    end
+
+    mdl.subspec "Response" do |rspns|
+      rspns.platform     = :ios, '7.0'
+      rspns.requires_arc = true
+      rspns.ios.source_files = "Classes/ios/BibleTriviaApiSDK/Model/Response/*.{h,m}"
+      rspns.public_header_files = 'Classes/**/*.h'
+    end
   end
 
   s.subspec "KeychainAccess" do |ka|
