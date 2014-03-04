@@ -15,6 +15,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
+  s.source_files = '*.md'
+  s.source_files = 'LICENSE'
   s.ios.source_files = 'Classes/ios/BibleTriviaApiSDK/*.{h,m}'
   s.exclude_files = "Classes/**/KeychainItemWrapper.{h,m}"
   s.resources = 'Assets'
