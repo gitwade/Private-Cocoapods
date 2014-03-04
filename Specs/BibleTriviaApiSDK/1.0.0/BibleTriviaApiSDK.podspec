@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
                        The API key, the API end point, and documentation are available for permitted users from Salem Web Network.
                        DESC
   s.homepage         = "http://www.salemwebnetwork.com/"
-  #s.license          = 'Proprietary'
   s.license          = { :type => 'Proprietary', :file => 'LICENSE' }
   s.author           = { "wade.simmons" => "wade.simmons@salemwebnetwork.com" }
   s.source           = { :svn => "https://svn.salemweb.net/svn/salem-iphone/BibleTriviaApiSDK", :tag => s.version.to_s }
@@ -16,12 +15,8 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  #s.source_files = 'CHANGELOG.md'
-  #s.source_files = 'README.md'
-  #s.source_files = 'LICENSE'
   s.ios.source_files = 'Classes/ios/BibleTriviaApiSDK/*.{h,m}'
   s.exclude_files = "Classes/**/KeychainItemWrapper.{h,m}"
-  #s.resources = 'Assets'
 
   s.ios.exclude_files = 'Classes/osx'
   s.osx.exclude_files = 'Classes/ios'
